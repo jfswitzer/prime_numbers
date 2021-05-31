@@ -1,12 +1,14 @@
-# Program to check if a number is prime or not
+# Program to factor large numbers
 # from https://www.programiz.com/python-programming/examples/prime-number
-def is_prime(num):
+def get_factors(num):
+    factors = []
     if num < 1:
-        return False
+        return []
     for i in range(2, num):
         if (num % i) == 0:
-            return False
-    return True
-nums = [x for x in range(50000)]
-prime = [is_prime(n) for n in nums]
-print(prime)
+            factors.append(i)
+            factors.append(int(num/i))
+    return factors
+nums = [x for x in range(40000)]
+factors = [get_factors(n) for n in nums]
+print(factors)
