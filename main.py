@@ -9,6 +9,6 @@ def get_factors(num):
             factors.append(i)
             factors.append(int(num/i))
     return factors
-nums = [x for x in range(40000)]
+nums = [x for x in range(35000)]
 factors = [get_factors(n) for n in nums]
 print(factors)
